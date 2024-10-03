@@ -30,8 +30,8 @@ buildscript {
 }
 
 
-def safeExtGet(name) {
-  rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties[name]
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
 }
 
 android {
